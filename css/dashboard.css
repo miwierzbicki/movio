@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open sans';
+}
+
+body {
+    width: 100%;
+    background-color: #EDF1F7;
+}
+
+nav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li, nav a {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a, nav a {
+    padding: 1rem;
+    text-decoration: none;
+    position: relative;
+
+}
+
+nav .logo:hover::after, nav ul li a:hover::after, aside ul li a:hover::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #3452eb;
+    content: '';
+}
+
+
+
+
+
+aside {
+    width: 15%;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 3rem;
+}
+aside h3 {
+    padding: 1rem;
+}
+aside ul li {
+    padding: 1rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding: 1em;
+}
+
+.content {
+    margin-top: 4rem;
+    width: 85%;
+    margin-left: 15%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+
+
+.card {
+    height: 650px;
+    border-radius: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+    position: relative;
+    background-color: white;
+
+}
+
+.img-overflow {
+    overflow: hidden;
+    height: 300px;
+}
+
+.card img {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    width: 100%;
+    height: 300px;
+
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    transition: .2s ease-in-out;
+}
+
+.card-content, .card-actions {
+    padding: .5rem;
+}
+
+
+
+.card-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.card-actions span {
+    font-size: 1.6rem;
+
+}
+
+.card-actions button {
+    border: none;
+    background-color: #3452eb;
+    color: white;
+    padding: .8rem;
+    cursor: pointer;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
+
+.cart-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.cart-card {
+    width: 70%;
+    min-height: 50vh;
+    background-color: white;
+    border-radius: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+}

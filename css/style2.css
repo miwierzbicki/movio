@@ -1,0 +1,24 @@
+.card-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.card-actions span {
+    font-size: 1.6rem;
+
+}
+
+.card-actions button {
+    border: none;
+    background-color: #3452eb;
+    color: white;
+    padding: .8rem;
+    cursor: pointer;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
