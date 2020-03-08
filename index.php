@@ -43,12 +43,12 @@ if (!isset($_SESSION['zalogowany'])) {
             require_once "config.php";
 
             $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
-            $wyswietl_kategorie = "SELECT category_id, category FROM categories";
-            $wynik_wyswietl = mysqli_query($polaczenie, $wyswietl_kategorie);
-            while ($row = mysqli_fetch_array($wynik_wyswietl)) {
-                echo "<li><a href=\"index.php?kategoria={$row['category']}\">" . ($row['category']) . "</a></li>";
+            // $wyswietl_kategorie = "SELECT category_id, category FROM categories";
+            // $wynik_wyswietl = mysqli_query($polaczenie, $wyswietl_kategorie);
+            // while ($row = mysqli_fetch_array($wynik_wyswietl)) {
+            //     echo "<li><a href=\"index.php?kategoria={$row['category']}\">" . ($row['category']) . "</a></li>";
 
-            }
+            // }
 
 
 
