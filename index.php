@@ -78,6 +78,7 @@ if (!isset($_SESSION['zalogowany'])) {
                         echo "<p>".$row_film['description']."</p>";
                         echo "</div>";
                         echo '<div class="card-actions">';
+                        echo 'Ilość: '.$row_film['amount'];
                         echo '<span>'.$row_film['price'].'zł</span>';
                         echo '<form action="dodaj.php" method="POST">';
                         echo "<input type=\"hidden\" name=\"product_id\" value=\"{$row_film['movie_id']}\">";

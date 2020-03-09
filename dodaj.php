@@ -6,8 +6,10 @@
     $username = $_POST['session_id'];
     echo $productId."<br/>".$username;
     $zapytanie = "INSERT INTO cart VALUES('$username','$productId')";
-    $wynik = mysqli_query($polaczenie, $zapytanie);
 
+    $wynik = mysqli_query($polaczenie, $zapytanie);
+    $zmniejszIlosc = "UPDATE movies SET amount=amount-1 WHERE movie_id=$productId";
+    mysqli_query($polaczenie, $zmniejszIlosc);
     header('Location: index.php');
 
 
