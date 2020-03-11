@@ -78,12 +78,23 @@ if (!isset($_SESSION['zalogowany'])) {
                         echo "<p>".$row_film['description']."</p>";
                         echo "</div>";
                         echo '<div class="card-actions">';
-                        echo 'Ilość: '.$row_film['amount'];
+                        if($row_film['amount']>=1) {
+                            echo 'Ilość: '.$row_film['amount'];
+                        }
+                        else {
+                            echo 'Wyprzedano';
+                        }
+
                         echo '<span>'.$row_film['price'].'zł</span>';
                         echo '<form action="dodaj.php" method="POST">';
                         echo "<input type=\"hidden\" name=\"product_id\" value=\"{$row_film['movie_id']}\">";
                         echo "<input type=\"hidden\" name=\"session_id\" value=\"{$_SESSION['login']}\">";
+                        if($row_film['amount']>=1) {
                         echo '<button type="submit">Dodaj</button>';
+                        }
+                        else {
+                            echo '<button type="submit" style="background-color: #99a7f0; cursor: not-allowed;" disabled>Brak</button>';
+                        }
                         echo '</form>';
                         echo '</div>';
 

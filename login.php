@@ -34,7 +34,10 @@
                  <div class="form-group">
                 <button type="submit" class="btn-login">Zaloguj się</button>
                 </div>
-                <p>Nie posiadasz konta? <a href="register.html">Zarejestruj się teraz</a>.</p>
+                <p>Nie posiadasz konta? <a href="register.php">Zarejestruj się teraz</a>.</p>
+                <?php
+                    echo @$_SESSION['blad'];
+                ?>
             </form>
         </div>
     </div>

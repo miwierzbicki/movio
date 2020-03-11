@@ -29,9 +29,14 @@
             <li><a href="logout.php">Wyloguj</a></li>
         </ul>
     </nav>
-    <?php
-        echo "<h1><br/><br/>Witaj, ".$_SESSION['login']."</h1>";
+    <div class="userpanel-wrapper">
+        <div class="userpanel-card">
+            <?php
+                echo "<h1>Witaj, ".$_SESSION['login']."</h1>";
 
-    ?>
+            ?>
+        </div>
+    </div>
+
 </body>
 </html>

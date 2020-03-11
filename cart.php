@@ -32,7 +32,6 @@ if (!isset($_SESSION['zalogowany'])) {
         <div class="cart-card">
              <?php
                 $suma = null;
-                echo $_SESSION['login'];
                 require_once "config.php";
                 $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
                 $wyswietl_koszyk = "SELECT movies.movie_id, title, author, category_id, picture, description, price, amount FROM movies INNER JOIN cart ON movies.movie_id=cart.movie_id WHERE username='{$_SESSION['login']}'";
@@ -41,12 +40,21 @@ if (!isset($_SESSION['zalogowany'])) {
                     printf("Error: %s\n", mysqli_error($polaczenie));
                     exit();
                 }
+                echo "<table>
+                <tr>
+                <th>Film</th>
+                <th>Cena</th>
+                </tr>";
                 while($row = mysqli_fetch_array($wynik_wyswietl_koszyk)) {
-                    echo $row['title']." ".$row['price']."<br/>";
+                    echo "<tr><td>".$row['title']."</td><td>".$row['price']."zł</td></tr>";
                     @$suma+=$row['price'];
                 }
-                echo $suma;
+                echo "</table>";
+
              ?>
+        </div>
+        <div class="cart-price">
+            <?php echo "Łącznie: ".$suma."zł";?>
         </div>
     </div>
 </body>
