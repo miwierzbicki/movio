@@ -34,9 +34,9 @@
                 array_push($errors, "Login już istnieje");
             }
         }
-
+        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
         if(count($errors)==0) {
-        $query = "INSERT INTO users VALUES (null, '$username', '$password')";
+        $query = "INSERT INTO users VALUES (null, '$username', '$password_hashed')";
         mysqli_query($polaczenie, $query);
         $_SESSION['success'] = "Utworzono konto";
         $_SESSION['login'] = $username;
